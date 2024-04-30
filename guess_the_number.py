@@ -1,7 +1,10 @@
 import random
+import time
+import os
 
 def main():
-    input("Bem vindo ao adivinhe o número")
+    print("Bem vindo ao adivinhe o número")
+    time.sleep(2)
     print("Escolha o intervalo:")
     intervalo = int(input("- "))
     numero_real = random.randint(1, intervalo)
@@ -18,10 +21,14 @@ def main():
             print("Maior!")
             escolha()
         elif num_esc == numero_real:
-            tentar_dnv = input("Parabéns você acertou! Tentar novamente Y - sim, N - não")
+            print("Parabéns você acertou! Tentar novamente Y - sim, N - não")
+            tentar_dnv = input("- ")
             if (tentar_dnv == "Y"):
+                os.system("clear")
                 main()
             elif (tentar_dnv == "N"):
                 print("Se mata ent krl, porra, fdp.")
+                time.sleep(3)
+                exit()
     escolha()
 main()
